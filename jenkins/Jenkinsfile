@@ -8,12 +8,13 @@ node {
 
   stage('SonarQube analysis') {
 
-  			withSonarQubeEnv('sonarqube') {
+        withSonarQubeEnv{
 
-  				sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=01934431c1546f26c068f7a91e4bf065e8097d28'
+            sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=01934431c1546f26c068f7a91e4bf065e8097d28'
 
-  			}
+        }
 
-  		}
+    }
+
 
 }

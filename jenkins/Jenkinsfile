@@ -5,4 +5,15 @@ node {
       sh "mvn clean verify"
     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
   }
+
+  stage('SonarQube analysis') {
+
+  			withSonarQubeEnv('sonarqube') {
+
+  				sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=01934431c1546f26c068f7a91e4bf065e8097d28'
+
+  			}
+
+  		}
+
 }

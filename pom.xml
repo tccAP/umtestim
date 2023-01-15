@@ -79,7 +79,11 @@
 						<goal>check</goal>
 					</goals>
 				</execution>
+
 			</executions>
+			<configuration>
+				<destFile>${sonar.jacoco.reportPath}</destFile>
+			</configuration>
 		</plugin>
 	</build>
 	<repositories>
